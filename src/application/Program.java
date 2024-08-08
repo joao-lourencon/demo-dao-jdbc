@@ -20,7 +20,11 @@ public class Program {
 
         SellerDao sellerDao = FactoryDao.createSellerDao();
 
-        System.out.println(department);
-        System.out.println(seller);
+        /*System.out.println(department);
+        System.out.println(seller);*/
+
+        Seller seller1 = sellerDao.findByid(3);
+
+        System.out.println(seller1);
     }
 }
