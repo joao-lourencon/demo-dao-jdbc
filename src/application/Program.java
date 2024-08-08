@@ -15,9 +15,6 @@ import static model.dao.FactoryDao.createSellerDao;
 public class Program {
     public static void main(String[] args) {
 
-        Department department = new Department(1, "Books");
-        Seller seller = new Seller(1, "Caio", "caio@gmail.com", new Date("1998/12/22"), 3000.0, department);
-
         SellerDao sellerDao = FactoryDao.createSellerDao();
 
         /*System.out.println(department);
@@ -25,6 +22,7 @@ public class Program {
 
         Seller seller1 = sellerDao.findByid(3);
 
+            System.out.println("--- TEST 01: seller findByI ---");
         System.out.println(seller1);
     }
 }
