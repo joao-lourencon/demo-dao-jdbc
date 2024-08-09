@@ -16,5 +16,10 @@ public class Program2 {
             System.out.println(department);
         }
 
+        System.out.println();
+
+        System.out.println("---- Test 02: Department FindById ----");
+        Department findById = factoryDao.findById(2);
+        System.out.println(findById);
     }
 }
