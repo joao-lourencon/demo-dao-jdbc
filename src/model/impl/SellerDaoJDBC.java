@@ -80,7 +80,7 @@ public class SellerDaoJDBC implements SellerDao {
     }
 
     @Override
-    public void deleteById(Integer integer) {
+    public void deleteById(Integer id) {
         PreparedStatement ps = null;
 
         try {
@@ -88,7 +88,7 @@ public class SellerDaoJDBC implements SellerDao {
                     "DELETE FROM seller " +
                         "WHERE id = ?");
 
-            ps.setInt(1, integer);
+            ps.setInt(1, id);
 
             int rows = ps.executeUpdate();
 
