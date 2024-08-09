@@ -25,7 +25,12 @@ public class Program2 {
         System.out.println();
 
         System.out.println("---- Test 03: Department Delete ----");
-        factoryDao.deleteById(6);
+        /*factoryDao.deleteById(6);*/
         System.out.println("Delete completed");
+
+        System.out.println("---- Test 04: Department Insert ----");
+        Department insert = new Department(null, "Music");
+        factoryDao.insert(insert);
+        System.out.println("Inserted! New id = " + insert.getId());
     }
 }
