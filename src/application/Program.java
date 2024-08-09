@@ -50,9 +50,18 @@ public class Program {
         System.out.println();
         System.out.println();
 
-        System.out.println("--- TEST 03: seller insert ---");
+        System.out.println("--- TEST 04: seller insert ---");
         Seller seller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, department);
         sellerDao.insert(seller);
         System.out.println("Inserted! New Id = " + seller.getId());
+
+        System.out.println();
+        System.out.println();
+
+        System.out.println("--- TEST 05: seller update ---");
+        seller1 = sellerDao.findByid(1);
+        seller1.setName("Martha Waine");
+        sellerDao.update(seller1);
+        System.out.println("Update completed");
     }
 }
