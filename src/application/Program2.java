@@ -28,9 +28,19 @@ public class Program2 {
         /*factoryDao.deleteById(6);*/
         System.out.println("Delete completed");
 
+        System.out.println();
+
         System.out.println("---- Test 04: Department Insert ----");
-        Department insert = new Department(null, "Music");
+        /*Department insert = new Department(null, "Music");
         factoryDao.insert(insert);
-        System.out.println("Inserted! New id = " + insert.getId());
+        System.out.println("Inserted! New id = " + insert.getId());*/
+
+        System.out.println();
+
+        System.out.println("---- Test 05: Department Update ----");
+        findById = factoryDao.findById(1);
+        findById.setName("Food");
+        factoryDao.update(findById);
+        System.out.println("Update completed");
     }
 }

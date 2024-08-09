@@ -53,7 +53,25 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
     @Override
     public void update(Department department) {
+        PreparedStatement ps = null;
 
+        try {
+            ps = connection.prepareStatement(
+                    "UPDATE department " +
+                            "SET Name = ? " +
+                            "WHERE Id = ?;");
+
+            ps.setString(1, department.getName());
+            ps.setInt(2, department.getId());
+
+            ps.executeUpdate();
+        }
+        catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        }
+        finally {
+            DB.closeStatement(ps);
+        }
     }
 
     @Override
